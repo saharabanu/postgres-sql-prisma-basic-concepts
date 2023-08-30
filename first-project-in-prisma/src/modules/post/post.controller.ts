@@ -77,7 +77,24 @@ const deletePost = async(req:Request, res:Response) => {
     res.send(error)
   }
 }
+//  this api does not work
+const learnAggregateGroupingsss = async(req:Request, res:Response) => {
+ 
+  
+  try {
+    const result = await PostService.learnAggregateGrouping();
+    console.log(result);
+    res.send({
+        success:true,
+        message:"avg successfully",
+        data: result
+    })
+    
+  } catch (error) {
+    res.send(error)
+  }
+}
 
 export const PostController = {
-    insertIntoDb, getPosts, getPost, updatePost, deletePost
+    insertIntoDb, getPosts, getPost, updatePost, deletePost, learnAggregateGroupingsss
 }

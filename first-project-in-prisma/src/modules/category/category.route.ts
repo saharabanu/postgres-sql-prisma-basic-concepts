@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/", CategoryController.insertIntoDb);
 // router.get("/:id", UserController.getUser);
-// router.get("/", UserController.getUsers);
+router.get("/", CategoryController.getcategory);
 // router.post("/profile", UserController.insertOrUpdateProfile)
 
 export const CategoryRouter = router

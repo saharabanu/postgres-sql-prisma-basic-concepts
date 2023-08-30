@@ -16,19 +16,19 @@ const insertIntoDb = async(req:Request, res:Response) => {
     res.send(error)
   }
 }
-// const getUsers = async(req:Request, res:Response) => {
-//   try {
-//     const result = await UserService.getUsers();
-//     res.send({
-//         success:true,
-//         message:"User retrieved successfully",
-//         data: result
-//     })
+const getcategory = async(req:Request, res:Response) => {
+  try {
+    const result = await CategoryService.getcategory();
+    res.send({
+        success:true,
+        message:"categoty retrieved successfully",
+        data: result
+    })
     
-//   } catch (error) {
-//     res.send(error)
-//   }
-// }
+  } catch (error) {
+    res.send(error)
+  }
+}
 // const getUser = async(req:Request, res:Response) => {
 //   try {
 //     const id = req.params.id
@@ -58,5 +58,6 @@ const insertIntoDb = async(req:Request, res:Response) => {
 // }
 
 export const CategoryController = {
-    insertIntoDb
+    insertIntoDb,
+    getcategory
 }

@@ -7,18 +7,21 @@ const insertIntoDb = async(data : User): Promise<User> => {
     return result
 };
 const getUsers = async() => {
-    const result = await prisma.user.findMany(
-        // jeita jeita dekhte cai
-    //     {select:{
-    //     email: true
-    // }}
-    // onno table dekhte caile
-    {
-        include:{
-            profile:true
-        }
-    }
-    );
+    // const result = await prisma.user.findMany(
+    //     // jeita jeita dekhte cai
+    // //     {select:{
+    // //     email: true
+    // // }}
+    // // onno table dekhte caile
+    // {
+    //     include:{
+    //         profile:true
+    //     }
+    // }
+    // );
+
+    // raw database
+    const result = await prisma.$queryRaw`select * from users`
     return result
 };
 const getUser = async(id : number) => {

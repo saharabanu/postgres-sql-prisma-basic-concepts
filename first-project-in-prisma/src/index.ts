@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 async function main() {
 app.listen((port),() => {
-  console.log(`this project is listening at ${port}`)
+  console.log(`this Prisma project server  is listening at ${port}`)
 })
 }
 main()

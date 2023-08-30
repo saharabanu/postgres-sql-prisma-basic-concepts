@@ -157,3 +157,33 @@ ORDER BY salary
 desc LIMIT 1 OFFSET 3;
 
 
+SELECT * FROM employeeone 
+WHERE empId NOT IN(2,7,9);
+
+
+SELECT * FROM employeeone 
+WHERE salary BETWEEN 1000 AND 60000;
+--  all h diye nam case sensitive
+SELECT * FROM employeeone 
+WHERE name LIKE '%h%'; 
+--  last h diye nam
+SELECT * FROM employeeone 
+WHERE name LIKE '%h%'; 
+--  first two caracter port n diye nam
+SELECT * FROM employeeone 
+WHERE name LIKE '__n%'; 
+--  deptid null
+SELECT * FROM employeeone 
+WHERE name LIKE '__n%'; 
+
+
+
+--  inner JOIN
+SELECT employeeone.name, employeeone.salary, deptName 
+FROM employeeone 
+INNER JOIN departments ON departments.deptId = employeeone.deptId
+;
+SELECT * FROM employeeone;
+
+
+-- practise baki ase 31 er (7-15)
